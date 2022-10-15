@@ -10,12 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
 <!-- CSS -->
-<link rel="stylesheet" href="<?php echo WEB; ?>/assets/css/font.css">
-<link rel="stylesheet" href="<?php echo WEB; ?>/assets/css/style.css">
-<link rel="stylesheet" href="<?php echo WEB; ?>/assets/css/hideBootstrapButtons.css">
+<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/font.css">
+<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/style.css">
+<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/hideBootstrapButtons.css">
 
 <!-- Bootstrap -->
-<link rel="stylesheet" type="text/css" href="<?php echo WEB; ?>/assets/css/bootstrap-v5.1.3.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo WEB_PATH; ?>/assets/css/bootstrap-v5.1.3.css"/>
 
 </head>
 <body>

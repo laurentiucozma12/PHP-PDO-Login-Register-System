@@ -9,13 +9,9 @@ if (isset($_POST["submit"])) {
     $email = isset($_POST["email"]);
 
     // Instantiate SignupContr class
-    include "../../app/classes/dbh.classes.php";
-    include "../../app/classes/signup.classes.php";
-    include "../../app/classes/signup-contr.classes.php";
-    /* 
-    include "<?php echo ROOT; ?>/app/classes/signup.classes.php";
-    include "<?php echo ROOT; ?>/app/classes/signup-contr.classes.php";
-    */
+    include ROOT_PATH."/app/classes/dbh.classes.php";
+    include ROOT_PATH."/app/classes/signup.classes.php";
+    include ROOT_PATH."/app/classes/signup-contr.classes.php";
     $signup = new SignupContr($uid, $pwd, $pwdRepeat, $email);
 
     // Running error handler and user signup
@@ -24,5 +20,3 @@ if (isset($_POST["submit"])) {
     // Going to back to front page
     header("location: ../../app/pages/dashboard.php");
 }
-
-
