@@ -9,11 +9,11 @@ include "../../assets/html/head.php";
         <form action="<?php echo WEB; ?>/app/includes/login.inc.php" method="post" class="mb-4">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="text" name="uid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
-                <label for="password" name="password" class="form-label">Password</label>
+                <label for="password" name="pwd" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password">
                 <div id="passwordHelpBlock" class="form-text">
                     Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.

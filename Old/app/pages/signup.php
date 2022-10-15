@@ -8,8 +8,8 @@ include "../../assets/html/head.php";
         <h1 class="mb-4 text-center">Signup</h1>
         <form action="<?php echo WEB; ?>/app/includes/signup.inc.php" method="post" class="mb-4">
             <div class="mb-3">
-                <label for="username" name="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username">
+                <label for="uid" name="uid" class="form-label">Username</label>
+                <input type="text" class="form-control" id="uid">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" name="email" class="form-label">Email address</label>
@@ -17,15 +17,15 @@ include "../../assets/html/head.php";
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
-                <label for="password" name="password" class="form-label">Password</label>
+                <label for="password" name="pwd" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password">
                 <div id="passwordHelpBlock" class="form-text">
                     Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
                 </div>
             </div>
             <div class="mb-3">
-                <label for="passwordRepeat" name="passwoRdrepeat " class="form-label">Repeat Password</label>
-                <input type="password" class="form-control" id="passwoRdrepeat">
+                <label for="repeatPassword" name="pwdrepeat " class="form-label">Repeat Password</label>
+                <input type="password" class="form-control" id="repeatPassword">
                 <div id="passwordHelpBlock" class="form-text">
                     Passwords must be the same  
                 </div>

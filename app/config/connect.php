@@ -3,7 +3,7 @@ function pdo_connect_mysql() {
     $servername = 'localhost';
     $username = 'root';
     $password = '';
-    $name = 'dbdarkpanel';
+    $name = 'DATABASE NAME';
     try {
         return $conn = new PDO('mysql:host=' . $servername . ';dbname=' . $name . ';charset=utf8', $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

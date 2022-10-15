@@ -7,6 +7,6 @@
 <script src="<?php echo WEB; ?>/assets/js/bootstrap-v5.1.3.js"></script>
 
 <!-- jQuery Ajax -->
-<script src="<?php echo WEB; ?>/assets/js/jQuery-3.6.1.js"></script>
+<!-- <script src="<?php echo WEB; ?>/assets/js/jQuery-3.6.1.js"></script> -->
 </body>
 </html>
