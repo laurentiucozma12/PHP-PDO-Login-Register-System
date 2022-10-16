@@ -3,6 +3,8 @@ include "../../app/config/config.php";
 include ROOT_PATH."/app/services/postService.php";
 include ROOT_PATH."/assets/html/head.php";
 new postService;
+$response = responseService::get();
+echo $response["message"];
 ?>
 <div class="wrap d-flex justify-content-center">
     <div class="container wrap col-12">
