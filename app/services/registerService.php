@@ -6,17 +6,15 @@ class registerService extends DB {
     private $username;
     private $email;
     private $password;
+    private $repet_password;
     private $db;
 
     public function __construct() {
 
-        $username = isset($_POST["username"]);
-        $email = isset($_POST["email"]);
-        $password = isset($_POST["password"]);
-
-        $this->username = ($username && $username != "") ? $_POST["username"] : null;
-        $this->email = ($email && $email != "") ? $_POST["email"] : null;
-        $this->password = ($password && $password != "") ? $_POST["password"] : null;
+        $this->username = isset($_POST["username"]) && !empty($_POST["username"]) ? $_POST["username"] : null;
+        $this->email = isset($_POST["email"]) && !empty($_POST["email"]) ? $_POST["email"] : null;
+        $this->password = isset($_POST["password"]) && !empty($_POST["password"]) ? $_POST["password"] : null;
+        $this->repet_password = isset($_POST["repeat_password"]) && !empty($_POST["repeat_password"]) ? $_POST["repeat_password"] : null;
         $this->db = (new DB)->conn;
 
         if ($this->username === null) {            
@@ -25,6 +23,8 @@ class registerService extends DB {
             responseService::set("Email is null");
         } else if ($this->password === null) {            
             responseService::set("Password is null");
+        } else if ($this->repet_password === null) {            
+            responseService::set("Repeat Password is null");
         } else if (strlen($this->username) < 4) {
             responseService::set("Username lower than 4 characters");
         } else if (strlen($this->email) < 4) {
@@ -35,11 +35,6 @@ class registerService extends DB {
             $this->post();
         }   
         
-        // This is not working
-        // return (strlen($this->username) <= 4) ? responseService::set("No username")
-        //      : (strlen($this->email) <= 4) ? responseService::set("No email")
-        //      : (strlen($this->password) < 8) ? responseService::set("No good password")
-        //      : $this->post(); 
     }
 
     private function post() { 

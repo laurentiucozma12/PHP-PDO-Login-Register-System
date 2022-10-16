@@ -3,8 +3,7 @@ include "../../app/config/config.php";
 include ROOT_PATH."/app/services/postService.php";
 include ROOT_PATH."/assets/html/head.php";
 new postService;
-$response = responseService::get();
-echo $response["message"];
+responseService::get();
 ?>
 <div class="wrap d-flex justify-content-center">
     <div class="container wrap col-12">
@@ -27,8 +26,8 @@ echo $response["message"];
                 </div>
             </div>
             <div class="mb-3">
-                <label for="repeatPassword" class="form-label">Repeat Password</label>
-                <input type="password" name="repeatPassword" class="form-control" id="repeatPassword">
+                <label for="repeat_password" class="form-label">Repeat Password</label>
+                <input type="password" name="repeat_password" class="form-control" id="repeat_password">
                 <div id="passwordHelpBlock" class="form-text">
                     Passwords must be the same  
                 </div>
