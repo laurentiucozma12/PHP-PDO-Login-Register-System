@@ -29,8 +29,8 @@ class registerService extends DB {
             responseService::set("Username lower than 4 characters");
         } else if (strlen($this->email) < 4) {
             responseService::set("Email lower than 4 characters");
-        } else if (strlen($this->password) < 8) {
-            responseService::set("Password lower than 8 characters");
+        } else if (strlen($this->password) < 8 && strlen($this->password) > 20) {
+            responseService::set("Password lower than 8 characters or bigger than 20 characters");
         } else {
             $this->post();
         }   
