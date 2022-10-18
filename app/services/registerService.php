@@ -8,7 +8,6 @@ class registerService extends DB {
     private $password;
     private $repeat_password;
     private $db;
-    private $error = false;
 
     public function __construct() {
 
@@ -22,6 +21,7 @@ class registerService extends DB {
         $lowercase = preg_match('@[a-z]@', $this->password);
         $number    = preg_match('@[0-9]@', $this->password);
         $specialChars = preg_match('@[^\w]@', $this->password);
+        $error = false;
 
         if ($this->username === null) {            
             responseService::set("Username is null");
