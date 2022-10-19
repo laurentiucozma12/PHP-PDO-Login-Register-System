@@ -46,11 +46,13 @@ class registerService extends DB {
         if ($error == true) {
             $usernameExists = $this->db->prepare("SELECT username FROM users WHERE username = :username");
             $usernameExists->bindParam(':username', $this->username);
-            $usernameExists->execute();
+            $usernameExists->execute();            
+            $resultsUsername = $usernameExists->fetchAll(PDO::FETCH_ASSOC);
 
             $emailExists = $this->db->prepare("SELECT email FROM users WHERE email = :email");
             $emailExists->bindParam(':email', $this->email);
             $emailExists->execute();
+            $resultsEmail = $emailExists->fetchAll(PDO::FETCH_ASSOC);
 
             if ($usernameExists->rowCount() > 0) {
                 responseService::set("Username already in use! Choose another one");
