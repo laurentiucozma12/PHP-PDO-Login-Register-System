@@ -61,6 +61,15 @@ class registerService extends DB {
             } else {
                 $this->post();
             }  
+            
+            // Is this the correct one, or the above uncommented one?
+            // if ($resultsUsername->rowCount() > 0) {
+            //     responseService::set("Username already in use! Choose another one");
+            // } else if ($resultsUsername->rowCount() > 0) {            
+            //     responseService::set("Email already in use! Choose another one");
+            // } else {
+            //     $this->post();
+            // }  
         }
     }
 
