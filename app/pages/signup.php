@@ -33,7 +33,7 @@ responseService::get();
             <button type="submit" name="register" class="btn btn-primary">Signup</button>
         </form>
         <div class="otherPage">
-            <a href="<?php echo ROOT_PATH; ?>/app/pages/login.php">Already have an account? Go to login.</a>
+            <a href="<?php echo WEB_PATH; ?>/app/pages/login.php">Already have an account? Go to login.</a>
         </div>
     </div>
 </div>

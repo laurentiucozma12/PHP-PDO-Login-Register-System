@@ -24,7 +24,7 @@ responseService::get();
             <button type="submit" name="login" class="btn btn-primary">Login</button>
         </form>
         <div class="otherPage">
-            <a href="<?php echo ROOT_PATH; ?>/app/pages/signup.php">Dont have an account? Go to signup.</a>
+            <a href="<?php echo WEB_PATH; ?>/app/pages/signup.php">Dont have an account? Go to signup.</a>
         </div>
     </div>
 </div>
