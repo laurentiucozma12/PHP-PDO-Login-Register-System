@@ -1,5 +1,4 @@
 <?php
-include ROOT_PATH."/app/services/responseService.php";
 
 class registerService extends DB {
 
