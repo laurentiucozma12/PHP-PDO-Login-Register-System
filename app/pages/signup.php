@@ -21,7 +21,7 @@ responseService::get();
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" name="password" class="form-control" id="password">
-                <div id="passwordHelpBlock" class="form-text">Password should be at least 8 characters in length, 20 character maximum and should include at least one upper case letter, one number, and one special character.</div>
+                <div id="passwordHelpBlock" class="form-text">Password must have at least 8 characters, one upper case, one number and one special character.</div>
             </div>
             <div class="mb-3">
                 <label for="repeat_password" class="form-label">Repeat Password</label>
