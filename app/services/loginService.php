@@ -9,7 +9,7 @@ class loginService extends DB {
 
     public function __construct() 
     { 
-        if(isset($_POST['submit'])) 
+        if(isset($_POST['login'])) 
         {
             if((isset($_POST['email']) || isset($_POST['username']) && isset($_POST['password'])) && (!empty($_POST['email']) || !empty($_POST['username']) && !empty($_POST['password']))) {
                 $this->email = trim($_POST['email']); 
