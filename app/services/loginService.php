@@ -11,9 +11,9 @@ class loginService extends DB {
     { 
         if(isset($_POST['login'])) 
         {
-            if((isset($_POST['email']) || isset($_POST['username']) && isset($_POST['password'])) && (!empty($_POST['email']) || !empty($_POST['username']) && !empty($_POST['password']))) {
-                $this->email = trim($_POST['email']); 
-                $this->username = trim($_POST['username']); 
+            if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+                $this->email    = trim($_POST['email']); 
+                // $this->username = trim($_POST['username']); 
                 $this->password = trim($_POST['password']);
          
                 // Perhaps this is not needed if we can log in with username or email??
