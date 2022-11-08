@@ -1,78 +1,45 @@
 <?php
+session_start();
+include ROOT_PATH.'/app/config/connect.php';
+$conn = connection();
 
-class loginService extends DB {
+if (isset($_POST['login'])) {
+    if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email']) && !empty($_POST['password'])) {    
+        $email = trim($_POST['email']);
+        $password = trim($_POST['password']);
 
-    private $username;
-    private $email;
-    private $password;
-    private $db;
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailExists = $conn->prepare('SELECT email FROM users WHERE email = :email');
+            $emailExists->bindParam(':email', $email);
+            $emailExists->execute();
+            $resultsEmail = $emailExists->fetchAll(PDO::FETCH_ASSOC);
 
-    public function __construct() 
-    { 
-        if(isset($_POST['login'])) 
-        {
-            if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email']) && !empty($_POST['password'])) {
-                $this->email    = trim($_POST['email']); 
-                // $this->username = trim($_POST['username']); 
-                $this->password = trim($_POST['password']);
-         
-                // Perhaps this is not needed if we can log in with username or email??
-                // if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                    $usernameE5xists = $this->db->prepare("SELECT username FROM users WHERE username = :username");
-                    $usernameExists->bindParam(':username', $this->username);
-                    $usernameExists->execute();            
-                    $resultsUsername = $usernameExists->fetchAll(PDO::FETCH_ASSOC);
+            if ($emailExists->rowCount() > 0) {
+                $passwordExists = $conn->prepare('SELECT password FROM users WHERE email = :email');
+                $passwordExists->bindParam(':email', $email);
+                $passwordExists->execute();
+                $resultsPassword = $passwordExists->fetchColumn();
 
-                    $emailExists = $this->db->prepare("SELECT * FROM users WHERE email = :email ");
-                    $emailExists->bindParam(':email', $this->email);
-                    $emailExists->execute();
-                    $resultsEmail = $emailExists->fetchAll(PDO::FETCH_ASSOC);
-
-                    if($resultsUsername->rowCount() > 0) 
-                    {
-                        $getRow = $usernameExists->fetchAll(PDO::FETCH_ASSOC);
-                        if(password_verify($password, $getRow['password'])) 
-                        {
-                            unset($getRow['password']);
-                            $_SESSION = $getRow;
-                            // delete the next line after tests
-                            responseService::set("SUCCESS, You loged in with username");
-                            header('location:'.ROOT_PATH.'/app/pages/dashboard.php');
-                            exit();
-                        } 
-                        else 
-                        {
-                            $errors[] = responseService::set("Wrong username or password");
-                        }
-                    } 
-                    else if ($emailExists->rowCount() > 0) 
-                    {
-                        if (password_verify($password, $getRow['password'])) 
-                        {
-                            unset($getRow['password']);
-                            $_SESSION = $getRow;
-                            // delete the next line after tests
-                            responseService::set("SUCCESS, You loged in with email");
-                            header('location:'.ROOT_PATH.'/app/pages/dashboard.php');
-                            exit();
-                        }
-                    } 
-                    else 
-                    {
-                        $errors[] = responseService::set("Wrong email or password");
-                    }
-                // Perhaps this is not needed if email validator is not needed
-                // } 
-                // else 
-                // {
-                // $errors[] = "Email address is not valid";	
-                // 
-                // }
-            } 
-            else 
-            {
-                $errors[] = responseService::set("Email or username and password are required");	
-            }         
+                if (password_verify($password, $resultsPassword)) {
+                    $userID = $conn->prepare('SELECT id FROM users WHERE email = :email AND password = :password');
+                    $userID->bindParam(':email', $email);
+                    $userID->bindParam(':password', $resultsPassword);
+                    $userID->execute();
+                    $resultUserID = $userID->fetchColumn();
+                    $_SESSION["userID"] = $resultUserID;
+                    
+                    header('Location: ./dashboard.php');
+                } else {
+                    echo 'Password is wrong';
+                }
+            } else {
+                echo 'This account does not exists.';
+            }
         }
-    }
+    } else if(!isset($_POST['email']) || empty($_POST['email'])) {
+        echo 'Email is required';
+    } else if(!isset($_POST['password']) || empty($_POST['password'])) {
+        echo 'Password is required';
+    }   
 }
+?>
