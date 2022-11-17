@@ -32,6 +32,7 @@ if (isset($_POST['register'])) {
                 $sql->bindParam(':email', $email);
                 $sql->bindParam(':password', $hashPassword);
                 $sql->execute();
+                header('Location: ./login.php');
             } else if ($emailExists->rowCount() > 0) { 
                 echo 'Email address already registered';
             } else {

@@ -6,7 +6,8 @@ include ROOT_PATH.'/assets/html/head.php';
 <div class='wrap d-flex justify-content-center'>
     <div class='container wrap col-12'>
         <h1 class='mb-4 text-center'>Register</h1>
-        <form class='mb-4' action='./login.php' method='POST'>
+        <!-- <form class='mb-4' action='./login.php' method='POST'> -->
+        <form class='mb-4'  method='POST'>
             <div class='mb-3'>
                 <label for='email' class='form-label'>Email address</label>
                 <input type='email' name='email' class='form-control' id='email' aria-describedby='emailHelp'>

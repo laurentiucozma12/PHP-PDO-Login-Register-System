@@ -22,7 +22,7 @@ include ROOT_PATH.'/assets/html/head.php';
             <button type='submit' name='login' class='btn btn-primary'>Login</button>
         </form>
         <div class='otherPage'>
-            <a href='<?php echo WEB_PATH; ?>/app/pages/register.php'>Dont have an account? Go to signup.</a>
+            <a href='<?php echo WEB_PATH; ?>/app/pages/register.php'>Dont have an account? Go to register.</a>
         </div>
     </div>
 </div>
