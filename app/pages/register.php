@@ -4,7 +4,7 @@ include ROOT_PATH.'/app/services/registerService.php';
 include ROOT_PATH.'/assets/html/head.php';
 ?>
 <div class='wrap d-flex justify-content-center'>
-    <div class='container wrap col-12'>
+    <div class='container wrap col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4'>
         <h1 class='mb-4 text-center'>Register</h1>
         <!-- <form class='mb-4' action='./login.php' method='POST'> -->
         <form class='mb-4'  method='POST'>

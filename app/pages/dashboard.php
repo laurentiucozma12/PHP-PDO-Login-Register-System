@@ -15,7 +15,6 @@ include ROOT_PATH."/assets/html/head.php";
     echo 'UserId:'.$_SESSION["userID"];
 ?>
 
-
 <form method="post">
     <button type="submit" name="logout">Logout</button>
 </form>

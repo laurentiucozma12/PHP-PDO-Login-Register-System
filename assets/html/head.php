@@ -12,7 +12,6 @@
 <!-- CSS -->
 <link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/font.css">
 <link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/style.css">
-<link rel="stylesheet" href="<?php echo WEB_PATH; ?>/assets/css/hideBootstrapButtons.css">
 
 <!-- Bootstrap -->
 <link rel="stylesheet" type="text/css" href="<?php echo WEB_PATH; ?>/assets/css/bootstrap-v5.1.3.css"/>

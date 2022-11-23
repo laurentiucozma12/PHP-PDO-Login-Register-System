@@ -4,7 +4,7 @@ include ROOT_PATH.'/app/services/loginService.php';
 include ROOT_PATH.'/assets/html/head.php';
 ?>
 <div class='wrap d-flex justify-content-center'>
-    <div class='container wrap col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 col-xxl-3'>
+    <div class='container wrap col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4'>
         <h1 class='mb-4 text-center'>Login</h1>
         <form class='mb-4' method='POST'>
             <div class='mb-3'>
